@@ -130,19 +130,22 @@ const addToWishlist = (id) => {
 
 const displayCart = () => {
   const cart = getCartItems();
-  console.log(cart);
 
-  cart.forEach((book) => {
+  const cartContainer = document.getElementById('cart');
+  cartContainer.innerHTML = '';
+  cart.forEach((book) => {  
     const div = createCard(book);
-    document.getElementById("cart").appendChild(div);
+    cartContainer.appendChild(div);
   });
 };
 
 const displayWishlist = () => {
   const wishlist = getWishlistItems();
 
+  const wishlistContainer = document.getElementById("wishlist")
+  wishlistContainer.innerHTML='';
   wishlist.forEach((book) => {
     const div = createCard(book);
-    document.getElementById("wishlist").appendChild(div);
+    wishlistContainer.appendChild(div);
   });
 };
